@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "navbar-top navbar-top"
+    "navbar-bottom navbar-bottom"
+    "sidebar content"
+    "footer footer";
+  height: 100vh;
+}
+
+/* NAVBARS (Flexbox) */
+.navbar-top, .navbar-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-bottom {
+  background-color: #333;
+}
+
+.navbar-top .links, .navbar-bottom {
+  display: flex;
+  gap: 15px;
+}
+
+/* SIDEBAR (Grid Area) */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* CONTENT CARDS (Flexbox) */
+.content {
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* FOOTER (Flexbox) */
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+}
